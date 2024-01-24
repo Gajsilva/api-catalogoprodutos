@@ -52,11 +52,25 @@ Sinta-se à vontade para explorar a documentação e contribuir para o desenvolv
 
 ## Como Usar
 
-Forneça instruções sobre como instalar, configurar e executar o seu projeto.
+Siga estas instruções para configurar e executar localmente a API de Catálogo de Produtos.
+
+### Pré-requisitos
+
+Certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
+
+- [Java Development Kit (JDK)](https://www.oracle.com/java/technologies/javase-downloads.html) - versão 8 ou superior.
+- [Maven](https://maven.apache.org/download.cgi) - para gerenciamento de dependências e construção do projeto.
+
+### Instalação
+
+1. Clone o repositório para o seu ambiente local:
+
+   ```bash
+   git clone https://github.com/seu-usuario/seu-projeto.git
+
 
 ## Exemplos de Requisições
 
-Forneça exemplos de requisições HTTP para a sua API.
 
 ## Contribuição
 
