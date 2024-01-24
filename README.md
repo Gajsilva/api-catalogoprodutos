@@ -6,6 +6,22 @@
 
 Descrição curta do seu projeto.
 
+## Objetivo de Uso
+
+Este projeto tem como objetivo fornecer uma API de Catálogo de Produtos eficiente e fácil de usar para aplicações que necessitam gerenciar informações sobre produtos. As principais finalidades de uso incluem:
+
+- **Consulta de Produtos:** Os usuários podem facilmente buscar e visualizar informações sobre produtos disponíveis no catálogo.
+  
+- **Avaliações e Classificações:** Permite aos usuários avaliarem produtos e visualizarem as classificações médias.
+
+- **Controle de Estoque:** Fornece informações atualizadas sobre a quantidade disponível de cada produto em estoque.
+
+- **Integração Simples:** Projetado para ser facilmente integrado a aplicações frontend, sistemas de e-commerce, ou qualquer outra plataforma que necessite acesso a um catálogo de produtos.
+
+Sinta-se à vontade para explorar a documentação e contribuir para o desenvolvimento contínuo deste projeto.
+
+
+
 ## Índice
 
 - [Funcionalidades](#funcionalidades)
