@@ -1,9 +1,6 @@
 package com.br.products.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
@@ -18,6 +16,7 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "PRODUTO")
 public class Produto implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -26,13 +25,14 @@ public class Produto implements Serializable {
     private Long id;
    private String nome;
     private String descricao;
-    private double preco;
+    private BigDecimal preco;
     private String categoria;
+    @Lob
     private String image;
-    private double quantidadeEstoque;
+    private BigDecimal quantidadeEstoque;
     private LocalDateTime dataCriacao;
     private String tags;
-    private double custoUnitario;
+    private BigDecimal custoUnitario;
 
     public Long getId() {
         return id;
@@ -58,11 +58,11 @@ public class Produto implements Serializable {
         this.descricao = descricao;
     }
 
-    public double getPreco() {
+    public BigDecimal getPreco() {
         return preco;
     }
 
-    public void setPreco(double preco) {
+    public void setPreco(BigDecimal preco) {
         this.preco = preco;
     }
 
@@ -82,11 +82,11 @@ public class Produto implements Serializable {
         this.image = image;
     }
 
-    public double getQuantidadeEstoque() {
+    public BigDecimal getQuantidadeEstoque() {
         return quantidadeEstoque;
     }
 
-    public void setQuantidadeEstoque(double quantidadeEstoque) {
+    public void setQuantidadeEstoque(BigDecimal quantidadeEstoque) {
         this.quantidadeEstoque = quantidadeEstoque;
     }
 
@@ -106,11 +106,11 @@ public class Produto implements Serializable {
         this.tags = tags;
     }
 
-    public double getCustoUnitario() {
+    public BigDecimal getCustoUnitario() {
         return custoUnitario;
     }
 
-    public void setCustoUnitario(double custoUnitario) {
+    public void setCustoUnitario(BigDecimal custoUnitario) {
         this.custoUnitario = custoUnitario;
     }
 }

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import org.springframework.data.domain.Sort;
 
+import java.util.Base64;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -27,6 +28,13 @@ private final ProdutoRepository produtoRepository;
     }
     public ProdutoResponseDTO criarProduto(ProdutoRequestDTO produtoRequest) {
         Produto produto = modelMapper.map(produtoRequest, Produto.class);
+
+        if (produtoRequest.getImage() != null) {
+            byte[] imagemBytes = produtoRequest.getImage().getBytes();
+            String imagemBase64 = Base64.getEncoder().encodeToString(imagemBytes);
+            produto.setImage(imagemBase64);
+        }
+
         Produto savedProduto = produtoRepository.save(produto);
         return modelMapper.map(savedProduto, ProdutoResponseDTO.class);
     }
