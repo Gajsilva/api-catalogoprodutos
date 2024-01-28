@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 
+import java.math.BigDecimal;
 import java.net.URI;
 import java.util.List;
 
@@ -39,12 +40,13 @@ public class ProdutoController {
     @GetMapping("/filtrar")
     public ResponseEntity<List<ProdutoResponseDTO>> buscarProdutosComFiltros(
             @RequestParam(required = false) String categoria,
-            @RequestParam(required = false) Double precoMin,
-            @RequestParam(required = false) Double precoMax,
-            @RequestParam(required = false) String ordenacao
-    ) {
-        List<ProdutoResponseDTO> produtosFiltrados = produtoService.buscarProdutosComFiltros(
-                categoria, precoMin, precoMax, ordenacao);
+            @RequestParam(required = false) BigDecimal precoMin,
+            @RequestParam(required = false) BigDecimal precoMax,
+            @RequestParam(defaultValue = "asc") String ordenacao,
+            @RequestParam(defaultValue = "0") int pagina,
+            @RequestParam(defaultValue = "10") int tamanhoPagina) {
+        List<ProdutoResponseDTO> produtosFiltrados = produtoService.buscarProdutosComFiltros(categoria,precoMin,
+                precoMax,ordenacao,pagina,tamanhoPagina);
         return ResponseEntity.ok(produtosFiltrados);
     }
     @PutMapping("/{id}")

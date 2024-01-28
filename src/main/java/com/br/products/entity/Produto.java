@@ -16,7 +16,6 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "PRODUTO")
 public class Produto implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -27,7 +26,7 @@ public class Produto implements Serializable {
     private String descricao;
     private BigDecimal preco;
     private String categoria;
-    @Lob
+
     private String image;
     private BigDecimal quantidadeEstoque;
     private LocalDateTime dataCriacao;
